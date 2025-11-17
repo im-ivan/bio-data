@@ -22,7 +22,20 @@ export const GeneCatalog = () => {
                         Buscar
                     </button>
                 </div>
-
+                <div className="flex">
+                    <div className="input-group flex items-center mx-3">
+                        <label className="m-1" htmlFor="gene-name">Name</label>
+                        <input type="checkbox" className="m-1" name="gene-name" id="gene-name" />
+                    </div>
+                    <div className="input-group flex items-center mx-3">
+                        <label className="m-1" htmlFor="gene-name">Id</label>
+                        <input type="checkbox" className="m-1" name="gene-name" id="gene-name" />
+                    </div>
+                    <div className="input-group flex items-center mx-3">
+                        <label className="m-1" htmlFor="gene-name">Function</label>
+                        <input type="checkbox" className="m-1" name="gene-name" id="gene-name" />
+                    </div>
+                </div>
             </div>
         </div>
         <div className="catalog-board">
