@@ -1,22 +1,25 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import './App.css'
-import { Header } from './components/Header'
-import { Home } from './components/Home'
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import { Layout } from "./components/Layout"
+import { Home } from "./components/Home"
+import { GeneCatalog } from "./components/GeneCatalog"
+import { MyBasket } from "./components/MyBasket"
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home></Home> }
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "catalog", element: <GeneCatalog /> },
+      { path: "basket", element: <MyBasket /> },
+    ],
+  },
 ])
 
-function App() {
-
+export default function App() {
   return (
-    <>
-      <div className="main-container bg-[#F2E8DF]">
-        <Header></Header>
-        <RouterProvider router={router}></RouterProvider>
-      </div>
-    </>
+    <div className="main-container bg-[#F2E8DF]">
+      <RouterProvider router={router} />
+    </div>
   )
 }
-
-export default App

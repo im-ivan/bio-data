@@ -1,5 +1,5 @@
 export const GeneCatalog = () => {
     return <>
-        gene cataog
+        gene catalog
     </>
 }
