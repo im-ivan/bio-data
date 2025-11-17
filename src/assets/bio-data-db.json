@@ -1,0 +1,818 @@
+[
+  {
+    "id": "BRCA1",
+    "name": "Breast Cancer Type 1 Susceptibility Protein",
+    "function": "Reparo de DNA, Supressor Tumoral",
+    "chromosome": "17",
+    "pathway": "Sinalização de P53",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.2, "p_value": 0.65 },
+      "Doença X": { "log2FC": 3.5, "p_value": 0.0001 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.1, "p_value": 0.08 }
+    }
+  },
+  {
+    "id": "TP53",
+    "name": "Tumor Protein P53",
+    "function": "Regulador de Ciclo Celular",
+    "chromosome": "17",
+    "pathway": "Sinalização de P53",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.72 },
+      "Doença X": { "log2FC": 2.8, "p_value": 0.001 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.5, "p_value": 0.45 }
+    }
+  },
+  {
+    "id": "AKT1",
+    "name": "AKT Serine/Threonine Kinase 1",
+    "function": "Sobrevivência Celular, Proliferação",
+    "chromosome": "14",
+    "pathway": "Via PI3K/AKT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.1, "p_value": 0.88 },
+      "Doença X": { "log2FC": 1.9, "p_value": 0.009 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.7, "p_value": 0.21 }
+    }
+  },
+  {
+    "id": "MYC",
+    "name": "MYC Proto-Oncogene, BHLH Transcription Factor",
+    "function": "Fator de Transcrição, Proliferação",
+    "chromosome": "8",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.3, "p_value": 0.55 },
+      "Doença X": { "log2FC": 4.1, "p_value": 0.00005 },
+      "Doença X Pós-Tratamento": { "log2FC": 2.5, "p_value": 0.002 }
+    }
+  },
+  {
+    "id": "KRAS",
+    "name": "KRAS Proto-Oncogene, GTPase",
+    "function": "Sinalização Celular, Proliferação",
+    "chromosome": "12",
+    "pathway": "Sinalização MAPK",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.05, "p_value": 0.91 },
+      "Doença X": { "log2FC": 1.5, "p_value": 0.012 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.8, "p_value": 0.18 }
+    }
+  },
+  {
+    "id": "PTPN11",
+    "name": "Protein Tyrosine Phosphatase Non-Receptor Type 11",
+    "function": "Fosfatase de Tirosina",
+    "chromosome": "12",
+    "pathway": "Via JAK-STAT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.2, "p_value": 0.77 },
+      "Doença X": { "log2FC": -3.1, "p_value": 0.0002 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.0, "p_value": 0.09 }
+    }
+  },
+  {
+    "id": "APOE",
+    "name": "Apolipoprotein E",
+    "function": "Metabolismo de Lipídios",
+    "chromosome": "19",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.4, "p_value": 0.49 },
+      "Doença X": { "log2FC": 0.6, "p_value": 0.35 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.7, "p_value": 0.29 }
+    }
+  },
+  {
+    "id": "CFTR",
+    "name": "Cystic Fibrosis Transmembrane Conductance Regulator",
+    "function": "Transporte de Íons",
+    "chromosome": "7",
+    "pathway": "Transporte",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.3, "p_value": 0.58 },
+      "Doença X": { "log2FC": -2.5, "p_value": 0.003 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.8, "p_value": 0.01 }
+    }
+  },
+  {
+    "id": "IL6",
+    "name": "Interleukin 6",
+    "function": "Resposta Imune, Inflamação",
+    "chromosome": "7",
+    "pathway": "Imunidade",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.5, "p_value": 0.41 },
+      "Doença X": { "log2FC": 5.0, "p_value": 0.00001 },
+      "Doença X Pós-Tratamento": { "log2FC": 3.2, "p_value": 0.0009 }
+    }
+  },
+  {
+    "id": "TNF",
+    "name": "Tumor Necrosis Factor",
+    "function": "Inflamação, Apoptose",
+    "chromosome": "6",
+    "pathway": "Imunidade",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.4, "p_value": 0.44 },
+      "Doença X": { "log2FC": 4.5, "p_value": 0.00009 },
+      "Doença X Pós-Tratamento": { "log2FC": 2.9, "p_value": 0.0015 }
+    }
+  },
+  {
+    "id": "CDK4",
+    "name": "Cyclin Dependent Kinase 4",
+    "function": "Ciclo Celular",
+    "chromosome": "12",
+    "pathway": "Regulação de Ciclo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.15, "p_value": 0.81 },
+      "Doença X": { "log2FC": 1.7, "p_value": 0.008 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.9, "p_value": 0.15 }
+    }
+  },
+  {
+    "id": "EGFR",
+    "name": "Epidermal Growth Factor Receptor",
+    "function": "Receptor de Crescimento",
+    "chromosome": "7",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 0.99 },
+      "Doença X": { "log2FC": 3.1, "p_value": 0.0005 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.6, "p_value": 0.02 }
+    }
+  },
+  {
+    "id": "ERBB2",
+    "name": "Erb-B2 Receptor Tyrosine Kinase 2",
+    "function": "Receptor de Crescimento",
+    "chromosome": "17",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.25, "p_value": 0.7 },
+      "Doença X": { "log2FC": 4.0, "p_value": 0.00007 },
+      "Doença X Pós-Tratamento": { "log2FC": 2.2, "p_value": 0.005 }
+    }
+  },
+  {
+    "id": "CCND1",
+    "name": "Cyclin D1",
+    "function": "Regulador de Ciclo Celular",
+    "chromosome": "11",
+    "pathway": "Regulação de Ciclo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.15, "p_value": 0.83 },
+      "Doença X": { "log2FC": 2.6, "p_value": 0.002 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.4, "p_value": 0.04 }
+    }
+  },
+  {
+    "id": "HIF1A",
+    "name": "Hypoxia Inducible Factor 1 Subunit Alpha",
+    "function": "Fator de Transcrição, Hipóxia",
+    "chromosome": "14",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.55, "p_value": 0.38 },
+      "Doença X": { "log2FC": 3.8, "p_value": 0.00015 },
+      "Doença X Pós-Tratamento": { "log2FC": 2.0, "p_value": 0.007 }
+    }
+  },
+  {
+    "id": "JUN",
+    "name": "Jun Proto-Oncogene, AP-1 Transcription Factor Subunit",
+    "function": "Fator de Transcrição",
+    "chromosome": "1",
+    "pathway": "Sinalização MAPK",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.75 },
+      "Doença X": { "log2FC": 1.2, "p_value": 0.051 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.4, "p_value": 0.52 }
+    }
+  },
+  {
+    "id": "FOS",
+    "name": "Fos Proto-Oncogene, AP-1 Transcription Factor Subunit",
+    "function": "Fator de Transcrição",
+    "chromosome": "14",
+    "pathway": "Sinalização MAPK",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.05, "p_value": 0.95 },
+      "Doença X": { "log2FC": 1.8, "p_value": 0.006 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.6, "p_value": 0.3 }
+    }
+  },
+  {
+    "id": "BCL2",
+    "name": "B-Cell CLL/Lymphoma 2",
+    "function": "Anti-apoptótico",
+    "chromosome": "18",
+    "pathway": "Apoptose",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.3, "p_value": 0.55 },
+      "Doença X": { "log2FC": 2.4, "p_value": 0.003 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.3, "p_value": 0.06 }
+    }
+  },
+  {
+    "id": "BAX",
+    "name": "BCL2 Associated X, Apoptosis Regulator",
+    "function": "Pró-apoptótico",
+    "chromosome": "19",
+    "pathway": "Apoptose",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.2, "p_value": 0.68 },
+      "Doença X": { "log2FC": -1.4, "p_value": 0.035 },
+      "Doença X Pós-Tratamento": { "log2FC": -0.7, "p_value": 0.25 }
+    }
+  },
+  {
+    "id": "CASP3",
+    "name": "Caspase 3, Apoptosis-Related Cysteine Peptidase",
+    "function": "Enzima, Apoptose",
+    "chromosome": "4",
+    "pathway": "Apoptose",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 0.98 },
+      "Doença X": { "log2FC": -2.1, "p_value": 0.005 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.2, "p_value": 0.07 }
+    }
+  },
+  {
+    "id": "VEGFA",
+    "name": "Vascular Endothelial Growth Factor A",
+    "function": "Angiogênese",
+    "chromosome": "6",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.3, "p_value": 0.55 },
+      "Doença X": { "log2FC": 2.2, "p_value": 0.005 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.5, "p_value": 0.015 }
+    }
+  },
+  {
+    "id": "PDGFRA",
+    "name": "Platelet Derived Growth Factor Receptor Alpha",
+    "function": "Receptor de Crescimento",
+    "chromosome": "4",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.4, "p_value": 0.48 },
+      "Doença X": { "log2FC": 1.0, "p_value": 0.11 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.6, "p_value": 0.3 }
+    }
+  },
+  {
+    "id": "STAT3",
+    "name": "Signal Transducer And Activator Of Transcription 3",
+    "function": "Fator de Transcrição",
+    "chromosome": "17",
+    "pathway": "Via JAK-STAT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.85 },
+      "Doença X": { "log2FC": 2.7, "p_value": 0.0015 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.0, "p_value": 0.11 }
+    }
+  },
+  {
+    "id": "JAK2",
+    "name": "Janus Kinase 2",
+    "function": "Cinase de Tirosina",
+    "chromosome": "9",
+    "pathway": "Via JAK-STAT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.05, "p_value": 0.92 },
+      "Doença X": { "log2FC": 1.6, "p_value": 0.025 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.95, "p_value": 0.12 }
+    }
+  },
+  {
+    "id": "PDK1",
+    "name": "Pyruvate Dehydrogenase Kinase 1",
+    "function": "Metabolismo de Glicose",
+    "chromosome": "17",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.2, "p_value": 0.6 },
+      "Doença X": { "log2FC": 2.3, "p_value": 0.004 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.8, "p_value": 0.009 }
+    }
+  },
+  {
+    "id": "LDHA",
+    "name": "Lactate Dehydrogenase A",
+    "function": "Glicólise Anaeróbica",
+    "chromosome": "11",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.3, "p_value": 0.5 },
+      "Doença X": { "log2FC": 3.0, "p_value": 0.0006 },
+      "Doença X Pós-Tratamento": { "log2FC": 2.1, "p_value": 0.006 }
+    }
+  },
+  {
+    "id": "MMP2",
+    "name": "Matrix Metallopeptidase 2",
+    "function": "Remodelação da Matriz, Invasão",
+    "chromosome": "16",
+    "pathway": "Invasão",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.4, "p_value": 0.45 },
+      "Doença X": { "log2FC": 1.9, "p_value": 0.007 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.8, "p_value": 0.2 }
+    }
+  },
+  {
+    "id": "VIM",
+    "name": "Vimentin",
+    "function": "Estrutura Celular, Transição EMT",
+    "chromosome": "10",
+    "pathway": "Transição EMT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.8 },
+      "Doença X": { "log2FC": 2.9, "p_value": 0.001 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.7, "p_value": 0.012 }
+    }
+  },
+  {
+    "id": "CDH1",
+    "name": "Cadherin 1",
+    "function": "Adesão Celular",
+    "chromosome": "16",
+    "pathway": "Transição EMT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.2, "p_value": 0.73 },
+      "Doença X": { "log2FC": -2.5, "p_value": 0.0035 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.5, "p_value": 0.03 }
+    }
+  },
+  {
+    "id": "SNAI1",
+    "name": "Snail Family Transcriptional Repressor 1",
+    "function": "Transição EMT, Fator de Transcrição",
+    "chromosome": "20",
+    "pathway": "Transição EMT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 0.99 },
+      "Doença X": { "log2FC": 3.4, "p_value": 0.0002 },
+      "Doença X Pós-Tratamento": { "log2FC": 2.0, "p_value": 0.008 }
+    }
+  },
+  {
+    "id": "A2M",
+    "name": "Alpha-2-Macroglobulin",
+    "function": "Inibidor de Protease",
+    "chromosome": "12",
+    "pathway": "Proteases",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.1, "p_value": 0.88 },
+      "Doença X": { "log2FC": 0.8, "p_value": 0.15 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.2, "p_value": 0.77 }
+    }
+  },
+  {
+    "id": "IL10",
+    "name": "Interleukin 10",
+    "function": "Anti-inflamatório",
+    "chromosome": "1",
+    "pathway": "Imunidade",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.3, "p_value": 0.6 },
+      "Doença X": { "log2FC": -1.9, "p_value": 0.009 },
+      "Doença X Pós-Tratamento": { "log2FC": -0.5, "p_value": 0.4 }
+    }
+  },
+  {
+    "id": "CXCL8",
+    "name": "C-X-C Motif Chemokine Ligand 8",
+    "function": "Quimiocina, Atração Imune",
+    "chromosome": "4",
+    "pathway": "Imunidade",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.4, "p_value": 0.48 },
+      "Doença X": { "log2FC": 4.5, "p_value": 0.00007 },
+      "Doença X Pós-Tratamento": { "log2FC": 3.0, "p_value": 0.001 }
+    }
+  },
+  {
+    "id": "KIT",
+    "name": "KIT Proto-Oncogene, Receptor Tyrosine Kinase",
+    "function": "Receptor de Crescimento",
+    "chromosome": "4",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.05, "p_value": 0.9 },
+      "Doença X": { "log2FC": 1.4, "p_value": 0.045 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.7, "p_value": 0.25 }
+    }
+  },
+  {
+    "id": "RET",
+    "name": "Ret Proto-Oncogene",
+    "function": "Receptor de Crescimento",
+    "chromosome": "10",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.15, "p_value": 0.85 },
+      "Doença X": { "log2FC": 1.1, "p_value": 0.09 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.4, "p_value": 0.5 }
+    }
+  },
+  {
+    "id": "ESR1",
+    "name": "Estrogen Receptor 1",
+    "function": "Receptor Nuclear, Hormonal",
+    "chromosome": "6",
+    "pathway": "Sinalização Hormonal",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.2, "p_value": 0.68 },
+      "Doença X": { "log2FC": -3.0, "p_value": 0.0004 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.8, "p_value": 0.01 }
+    }
+  },
+  {
+    "id": "AR",
+    "name": "Androgen Receptor",
+    "function": "Receptor Nuclear, Hormonal",
+    "chromosome": "X",
+    "pathway": "Sinalização Hormonal",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.77 },
+      "Doença X": { "log2FC": 2.1, "p_value": 0.004 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.0, "p_value": 0.1 }
+    }
+  },
+  {
+    "id": "PTEN",
+    "name": "Phosphatase And Tensin Homolog",
+    "function": "Supressor Tumoral, Fosfatase",
+    "chromosome": "10",
+    "pathway": "Via PI3K/AKT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.3, "p_value": 0.55 },
+      "Doença X": { "log2FC": -2.8, "p_value": 0.001 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.5, "p_value": 0.03 }
+    }
+  },
+  {
+    "id": "RB1",
+    "name": "Retinoblastoma 1",
+    "function": "Supressor Tumoral, Ciclo Celular",
+    "chromosome": "13",
+    "pathway": "Regulação de Ciclo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 0.99 },
+      "Doença X": { "log2FC": -1.7, "p_value": 0.01 },
+      "Doença X Pós-Tratamento": { "log2FC": -0.9, "p_value": 0.15 }
+    }
+  },
+  {
+    "id": "CDKN2A",
+    "name": "Cyclin Dependent Kinase Inhibitor 2A",
+    "function": "Inibidor de Cinase, Supressor Tumoral",
+    "chromosome": "9",
+    "pathway": "Regulação de Ciclo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.2, "p_value": 0.7 },
+      "Doença X": { "log2FC": -3.2, "p_value": 0.0003 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.9, "p_value": 0.008 }
+    }
+  },
+  {
+    "id": "SMAD4",
+    "name": "SMAD Family Member 4",
+    "function": "Fator de Transcrição, Sinalização",
+    "chromosome": "18",
+    "pathway": "Sinalização TGF-Beta",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.15, "p_value": 0.75 },
+      "Doença X": { "log2FC": -1.5, "p_value": 0.035 },
+      "Doença X Pós-Tratamento": { "log2FC": -0.6, "p_value": 0.35 }
+    }
+  },
+  {
+    "id": "TGFB1",
+    "name": "Transforming Growth Factor Beta 1",
+    "function": "Sinalização Celular, Crescimento",
+    "chromosome": "19",
+    "pathway": "Sinalização TGF-Beta",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.3, "p_value": 0.5 },
+      "Doença X": { "log2FC": 2.0, "p_value": 0.006 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.1, "p_value": 0.08 }
+    }
+  },
+  {
+    "id": "NOTCH1",
+    "name": "Notch Receptor 1",
+    "function": "Sinalização Celular, Desenvolvimento",
+    "chromosome": "9",
+    "pathway": "Sinalização Notch",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.1, "p_value": 0.82 },
+      "Doença X": { "log2FC": 1.7, "p_value": 0.012 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.8, "p_value": 0.2 }
+    }
+  },
+  {
+    "id": "ADAM17",
+    "name": "ADAM Metallopeptidase Domain 17",
+    "function": "Protease, Sinalização",
+    "chromosome": "2",
+    "pathway": "Proteases",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.4, "p_value": 0.45 },
+      "Doença X": { "log2FC": 1.5, "p_value": 0.03 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.9, "p_value": 0.15 }
+    }
+  },
+  {
+    "id": "GABARAP",
+    "name": "GABA Type A Receptor-Associated Protein",
+    "function": "Autofagia",
+    "chromosome": "17",
+    "pathway": "Autofagia",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.05, "p_value": 0.9 },
+      "Doença X": { "log2FC": -2.3, "p_value": 0.004 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.4, "p_value": 0.05 }
+    }
+  },
+  {
+    "id": "MAPK1",
+    "name": "Mitogen-Activated Protein Kinase 1",
+    "function": "Cinase, Sinalização",
+    "chromosome": "22",
+    "pathway": "Sinalização MAPK",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.1, "p_value": 0.85 },
+      "Doença X": { "log2FC": 1.0, "p_value": 0.12 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.3, "p_value": 0.6 }
+    }
+  },
+  {
+    "id": "SIRT1",
+    "name": "Sirtuin 1",
+    "function": "Longevidade, Regulação de DNA",
+    "chromosome": "10",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.25, "p_value": 0.65 },
+      "Doença X": { "log2FC": -1.8, "p_value": 0.009 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.0, "p_value": 0.1 }
+    }
+  },
+  {
+    "id": "SOD1",
+    "name": "Superoxide Dismutase 1",
+    "function": "Estresse Oxidativo",
+    "chromosome": "21",
+    "pathway": "Homeostase",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.78 },
+      "Doença X": { "log2FC": 0.5, "p_value": 0.4 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.2, "p_value": 0.65 }
+    }
+  },
+  {
+    "id": "PRKCA",
+    "name": "Protein Kinase C Alpha",
+    "function": "Cinase, Sinalização",
+    "chromosome": "17",
+    "pathway": "Via PI3K/AKT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 0.99 },
+      "Doença X": { "log2FC": 1.3, "p_value": 0.04 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.5, "p_value": 0.45 }
+    }
+  },
+  {
+    "id": "HSP90AB1",
+    "name": "Heat Shock Protein 90 Alpha Family Class B Member 1",
+    "function": "Chaperona, Estabilidade Protéica",
+    "chromosome": "1",
+    "pathway": "Homeostase",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.3, "p_value": 0.55 },
+      "Doença X": { "log2FC": 2.5, "p_value": 0.0025 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.2, "p_value": 0.07 }
+    }
+  },
+  {
+    "id": "TFEB",
+    "name": "Transcription Factor EB",
+    "function": "Fator de Transcrição, Lisossomo",
+    "chromosome": "6",
+    "pathway": "Autofagia",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.2, "p_value": 0.7 },
+      "Doença X": { "log2FC": -3.0, "p_value": 0.0005 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.7, "p_value": 0.015 }
+    }
+  },
+  {
+    "id": "ATG5",
+    "name": "Autophagy Related 5",
+    "function": "Autofagia",
+    "chromosome": "14",
+    "pathway": "Autofagia",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.85 },
+      "Doença X": { "log2FC": -2.1, "p_value": 0.005 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.0, "p_value": 0.1 }
+    }
+  },
+  {
+    "id": "WNT1",
+    "name": "Wnt Family Member 1",
+    "function": "Sinalização Celular, Desenvolvimento",
+    "chromosome": "12",
+    "pathway": "Sinalização WNT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.35, "p_value": 0.5 },
+      "Doença X": { "log2FC": 3.3, "p_value": 0.0003 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.9, "p_value": 0.009 }
+    }
+  },
+  {
+    "id": "CTNNB1",
+    "name": "Catenin Beta 1",
+    "function": "Adesão Celular, Sinalização",
+    "chromosome": "3",
+    "pathway": "Sinalização WNT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.1, "p_value": 0.8 },
+      "Doença X": { "log2FC": 2.8, "p_value": 0.0012 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.4, "p_value": 0.04 }
+    }
+  },
+  {
+    "id": "AXIN1",
+    "name": "Axin 1",
+    "function": "Regulador, Sinalização WNT",
+    "chromosome": "16",
+    "pathway": "Sinalização WNT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.05, "p_value": 0.95 },
+      "Doença X": { "log2FC": -1.9, "p_value": 0.008 },
+      "Doença X Pós-Tratamento": { "log2FC": -0.8, "p_value": 0.2 }
+    }
+  },
+  {
+    "id": "LEF1",
+    "name": "Lymphoid Enhancer-Binding Factor 1",
+    "function": "Fator de Transcrição, WNT",
+    "chromosome": "4",
+    "pathway": "Sinalização WNT",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.2, "p_value": 0.7 },
+      "Doença X": { "log2FC": 1.6, "p_value": 0.02 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.7, "p_value": 0.25 }
+    }
+  },
+  {
+    "id": "SMO",
+    "name": "Smoothened, Frizzled Class Receptor",
+    "function": "Receptor, Sinalização Hedgehog",
+    "chromosome": "7",
+    "pathway": "Sinalização Hedgehog",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.1, "p_value": 0.85 },
+      "Doença X": { "log2FC": 2.5, "p_value": 0.003 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.2, "p_value": 0.07 }
+    }
+  },
+  {
+    "id": "GLI1",
+    "name": "GLI Family Zinc Finger 1",
+    "function": "Fator de Transcrição, Hedgehog",
+    "chromosome": "12",
+    "pathway": "Sinalização Hedgehog",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.3, "p_value": 0.55 },
+      "Doença X": { "log2FC": 3.8, "p_value": 0.0001 },
+      "Doença X Pós-Tratamento": { "log2FC": 2.5, "p_value": 0.003 }
+    }
+  },
+  {
+    "id": "IGF1R",
+    "name": "Insulin Like Growth Factor 1 Receptor",
+    "function": "Receptor de Crescimento",
+    "chromosome": "15",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 0.99 },
+      "Doença X": { "log2FC": 1.5, "p_value": 0.035 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.6, "p_value": 0.3 }
+    }
+  },
+  {
+    "id": "FGF2",
+    "name": "Fibroblast Growth Factor 2",
+    "function": "Fator de Crescimento, Angiogênese",
+    "chromosome": "4",
+    "pathway": "Fatores de Crescimento",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.4, "p_value": 0.45 },
+      "Doença X": { "log2FC": 2.0, "p_value": 0.006 },
+      "Doença X Pós-Tratamento": { "log2FC": 1.1, "p_value": 0.09 }
+    }
+  },
+  {
+    "id": "CYP1A1",
+    "name": "Cytochrome P450 Family 1 Subfamily A Member 1",
+    "function": "Metabolismo de Xenobióticos",
+    "chromosome": "15",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.3, "p_value": 0.6 },
+      "Doença X": { "log2FC": 0.7, "p_value": 0.25 },
+      "Doença X Pós-Tratamento": { "log2FC": -1.5, "p_value": 0.03 }
+    }
+  },
+  {
+    "id": "G6PD",
+    "name": "Glucose-6-Phosphate Dehydrogenase",
+    "function": "Metabolismo de Glicose",
+    "chromosome": "X",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.85 },
+      "Doença X": { "log2FC": 1.2, "p_value": 0.06 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.4, "p_value": 0.5 }
+    }
+  },
+  {
+    "id": "GAPDH",
+    "name": "Glyceraldehyde-3-Phosphate Dehydrogenase",
+    "function": "Glicólise",
+    "chromosome": "12",
+    "pathway": "Metabolismo",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 1.0 },
+      "Doença X": { "log2FC": 0.0, "p_value": 0.99 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.0, "p_value": 1.0 }
+    }
+  },
+  {
+    "id": "ACTB",
+    "name": "Actin Beta",
+    "function": "Estrutura Celular",
+    "chromosome": "7",
+    "pathway": "Homeostase",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 1.0 },
+      "Doença X": { "log2FC": 0.05, "p_value": 0.9 },
+      "Doença X Pós-Tratamento": { "log2FC": -0.05, "p_value": 0.9 }
+    }
+  },
+  {
+    "id": "TBP",
+    "name": "TATA-Box Binding Protein",
+    "function": "Fator de Transcrição, Geral",
+    "chromosome": "6",
+    "pathway": "Regulação de DNA",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.0, "p_value": 1.0 },
+      "Doença X": { "log2FC": -0.02, "p_value": 0.95 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.01, "p_value": 0.98 }
+    }
+  },
+  {
+    "id": "UBE2D1",
+    "name": "Ubiquitin Conjugating Enzyme E2 D1",
+    "function": "Ubiquitinação",
+    "chromosome": "10",
+    "pathway": "Proteases",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.1, "p_value": 0.75 },
+      "Doença X": { "log2FC": -1.1, "p_value": 0.08 },
+      "Doença X Pós-Tratamento": { "log2FC": -0.4, "p_value": 0.5 }
+    }
+  },
+  {
+    "id": "SUMO1",
+    "name": "Small Ubiquitin-like Modifier 1",
+    "function": "Modificação Protéica",
+    "chromosome": "2",
+    "pathway": "Homeostase",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": 0.2, "p_value": 0.65 },
+      "Doença X": { "log2FC": 1.5, "p_value": 0.03 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.8, "p_value": 0.2 }
+    }
+  },
+  {
+    "id": "RHOA",
+    "name": "Ras Homolog Family Member A",
+    "function": "Motilidade Celular, Sinalização",
+    "chromosome": "3",
+    "pathway": "Sinalização Celular",
+    "expression_data": {
+      "Controle Saudável": { "log2FC": -0.1, "p_value": 0.85 },
+      "Doença X": { "log2FC": 1.6, "p_value": 0.02 },
+      "Doença X Pós-Tratamento": { "log2FC": 0.9, "p_value": 0.15 }
+    }
+  }
+]
