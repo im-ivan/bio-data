@@ -1,8 +1,19 @@
+
+import { useState } from "react";
 import geneData from "../assets/bio-data-db.json"
 import type { Gene } from "../types/Gene"
 import { GeneCard } from "./GeneCard"
+
 export const GeneCatalog = () => {
-    const geneList: Gene[] = geneData
+
+    const genesList: Gene[] = geneData
+    const [search, setSearch] = useState<string>("");
+    const filteredGenes = genesList.filter(gene =>
+        gene.name.toLowerCase().includes(search.toLowerCase()) ||
+        gene.id.toString().includes(search) ||
+        gene.function.toLowerCase().includes(search.toLowerCase())
+    )
+
     return <>
         <div className="catalog-filter-area p-5">
             <div className="w-full max-w-sm min-w-[200px]">
@@ -10,6 +21,7 @@ export const GeneCatalog = () => {
                     <input
                         className="w-full bg-transparent placeholder:text-slate-400 text-amber-700 text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-amber-400 hover:border-amber-600 shadow-sm focus:shadow"
                         placeholder="Example: Protein"
+                        onChange={e => setSearch(e.target.value)}
                     />
                     <button
                         className="absolute top-1 right-1 flex items-center rounded bg-amber-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-amber-700 focus:shadow-none active:bg-amber hover:bg-amber-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
@@ -40,7 +52,7 @@ export const GeneCatalog = () => {
         </div>
         <div className="catalog-board">
             {
-                geneList.map(gene => {
+                filteredGenes.map(gene => {
                     return (
                         <GeneCard key={gene.id} id={gene.id} name={gene.name} func={gene.function} />
                     )
