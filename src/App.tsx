@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout"
 import { Home } from "./components/Home"
 import { GeneCatalog } from "./components/GeneCatalog"
 import { MyBasket } from "./components/MyBasket"
+import { NotFound } from "./components/NotFound"
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "catalog", element: <GeneCatalog /> },
       { path: "basket", element: <MyBasket /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ])
