@@ -45,7 +45,7 @@ export const GeneCatalog = () => {
                 <div className="relative">
                     <input
                         className="w-full bg-transparent placeholder:text-slate-400 text-amber-700 text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-amber-400 hover:border-amber-600 shadow-sm focus:shadow"
-                        placeholder="Example: Protein"
+                        placeholder="Pesquisar por Nome, ID ou Função (Ex: 'Protein' ou 'BRCA')"
                         onChange={e => setSearch(e.target.value)}
                         value={search}
                     />
