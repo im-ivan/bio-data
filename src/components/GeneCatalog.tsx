@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import geneData from "../assets/bio-data-db.json"
 import type { Gene } from "../types/Gene"
 import { GeneCard } from "./GeneCard"
@@ -25,16 +25,19 @@ export const GeneCatalog = () => {
     }
 
     const [search, setSearch] = useState<string>("");
-    const filteredGenes = genesList.filter(gene => {
+    const filteredGenes = useMemo(() => {
         const query = search.toLowerCase();
-        const nameMatch = filters.name && gene.name.toLowerCase().includes(query)
-        const idMatch = filters.id && gene.id.toLowerCase().includes(query)
-        const functionMatch = filters.function && gene.function.toLowerCase().includes(query)
-        return nameMatch || idMatch || functionMatch
-        // gene.name.toLowerCase().includes(search.toLowerCase()) ||
-        //     gene.id.toString().includes(search) ||
-        //     gene.function.toLowerCase().includes(search.toLowerCase())
-    })
+
+        return genesList.filter(gene => {
+            if (!query) return true
+
+            const nameMatch = filters.name && gene.name.toLowerCase().includes(query)
+            const idMatch = filters.id && gene.id.toLowerCase().includes(query)
+            const functionMatch = filters.function && gene.function.toLowerCase().includes(query)
+
+            return nameMatch || idMatch || functionMatch;
+        });
+    }, [search, filters, genesList])
 
     return <>
         <div className="catalog-filter-area p-5">
