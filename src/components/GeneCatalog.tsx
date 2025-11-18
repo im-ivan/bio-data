@@ -1,8 +1,8 @@
-
 import { useMemo, useState } from "react";
 import geneData from "../assets/bio-data-db.json"
 import type { Gene } from "../types/Gene"
 import { GeneCard } from "./GeneCard"
+import { PaginationIndex } from "./PaginationIndex";
 
 interface FilterFields {
     name: boolean;
@@ -18,23 +18,15 @@ export const GeneCatalog = () => {
         id: true,
         function: true
     })
-    const [currentPage, setCurrentPage] = useState<number>(1)
-    const MAX_ITEMS = 10
-    const LAST_INDEX = currentPage * MAX_ITEMS
-    const FIRST_INDEX = LAST_INDEX - MAX_ITEMS
-
-    const handleFilterChange = (field: keyof FilterFields) => {
-        setFilters(prevFilters => ({
-            ...prevFilters,
-            [field]: !prevFilters[field]
-        }))
-    }
-
     const [search, setSearch] = useState<string>("");
+
+    const MAX_ITEMS_PER_PAGE = 10
+    const [currentPage, setCurrentPage] = useState<number>(1)
+
     const filteredGenes = useMemo(() => {
         const query = search.toLowerCase();
 
-        return genesList.filter(gene => {
+        const newFilteredGenes = genesList.filter(gene => {
             if (!query) return true
 
             const nameMatch = filters.name && gene.name.toLowerCase().includes(query)
@@ -43,7 +35,23 @@ export const GeneCatalog = () => {
 
             return nameMatch || idMatch || functionMatch;
         });
-    }, [search, filters, genesList])
+
+        if (currentPage > 1 && newFilteredGenes.length <= (currentPage - 1) * MAX_ITEMS_PER_PAGE) {
+            setCurrentPage(1);
+        }
+
+        return newFilteredGenes;
+    }, [search, filters, genesList, currentPage])
+
+    const LAST_INDEX = currentPage * MAX_ITEMS_PER_PAGE
+    const FIRST_INDEX = LAST_INDEX - MAX_ITEMS_PER_PAGE
+
+    const handleFilterChange = (field: keyof FilterFields) => {
+        setFilters(prevFilters => ({
+            ...prevFilters,
+            [field]: !prevFilters[field]
+        }))
+    }
 
     return <>
         <div className="catalog-filter-area p-5">
@@ -53,14 +61,13 @@ export const GeneCatalog = () => {
                         className="w-full bg-transparent placeholder:text-slate-400 text-amber-700 text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-amber-400 hover:border-amber-600 shadow-sm focus:shadow"
                         placeholder="Pesquisar por Nome, ID ou Função (Ex: 'Protein' ou 'BRCA')"
                         onChange={e => setSearch(e.target.value)}
-                        value={search}
-                    />
+                        value={search} />
                     <button
                         className="absolute top-1 right-1 flex items-center rounded bg-amber-800 py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow focus:bg-amber-700 focus:shadow-none active:bg-amber hover:bg-amber-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                        type="button"
-                    >
+                        type="button">
+
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 mr-2">
-                            <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+                            <path fillRule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clipRule="evenodd" />
                         </svg>
                         Buscar
                     </button>
@@ -73,8 +80,7 @@ export const GeneCatalog = () => {
                             name="gene-name"
                             id="gene-name"
                             checked={filters.name}
-                            onChange={() => handleFilterChange("name")}
-                        />
+                            onChange={() => handleFilterChange("name")} />
                     </div>
                     <div className="input-group flex items-center mx-3">
                         <label className="m-1" htmlFor="gene-id">Id</label>
@@ -83,8 +89,7 @@ export const GeneCatalog = () => {
                             name="gene-id"
                             id="gene-id"
                             checked={filters.id}
-                            onChange={() => handleFilterChange("id")}
-                        />
+                            onChange={() => handleFilterChange("id")} />
                     </div>
                     <div className="input-group flex items-center mx-3">
                         <label className="m-1" htmlFor="gene-function">Function</label>
@@ -93,17 +98,30 @@ export const GeneCatalog = () => {
                             name="gene-function"
                             id="gene-function"
                             checked={filters.function}
-                            onChange={() => handleFilterChange("function")}
-                        />
+                            onChange={() => handleFilterChange("function")} />
                     </div>
                 </div>
             </div>
         </div>
         <div className="catalog-board">
-            {filteredGenes.length === 0 ?
-                <p className="col-span-full text-center text-slate-500">Nenhum gene encontrado com os critérios de busca e filtro.</p> :
-                <p className="col-span-full text-center text-slate-500">A busca retornou {filteredGenes.length} resultados.</p>
-            }
+            {filteredGenes.length === 0 ? (
+                <p className="col-span-full text-center text-slate-500">
+                    Nenhum gene encontrado com os critérios de busca e filtro.
+                </p>
+            ) : (
+                <>
+                    <p className="col-span-full text-center text-slate-500">
+                        A busca retornou {filteredGenes.length} resultados.
+                    </p>
+                    <PaginationIndex
+                        totalItems={filteredGenes.length}
+                        itemsPerPage={MAX_ITEMS_PER_PAGE}
+                        currentPage={currentPage}
+                        onPageChange={setCurrentPage}
+                    />
+                </>
+            )}
+
             {
                 filteredGenes.slice(FIRST_INDEX, LAST_INDEX).map(gene => {
                     return (
