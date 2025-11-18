@@ -9,6 +9,10 @@ interface FilterFields {
     id: boolean;
     function: boolean;
 }
+
+const MAX_ITEMS = 10
+const MAX_LEFT = (MAX_ITEMS - 1) / 2
+
 export const GeneCatalog = () => {
     const genesList: Gene[] = geneData
     const [filters, setFilters] = useState<FilterFields>({
@@ -16,6 +20,7 @@ export const GeneCatalog = () => {
         id: true,
         function: true
     })
+    const [currentPage, setCurrentPage] = useState<number>(1)
 
     const handleFilterChange = (field: keyof FilterFields) => {
         setFilters(prevFilters => ({
@@ -94,6 +99,10 @@ export const GeneCatalog = () => {
             </div>
         </div>
         <div className="catalog-board">
+            {filteredGenes.length === 0 ?
+                <p className="col-span-full text-center text-slate-500">Nenhum gene encontrado com os critérios de busca e filtro.</p> :
+                <p className="col-span-full text-center text-slate-500">A busca retornou {filteredGenes.length} resultados.</p>
+            }
             {
                 filteredGenes.map(gene => {
                     return (
@@ -101,7 +110,6 @@ export const GeneCatalog = () => {
                     )
                 })
             }
-            {filteredGenes.length === 0 && <p className="col-span-full text-center text-slate-500">Nenhum gene encontrado com os critérios de busca e filtro.</p>}
         </div>
     </>
 }
