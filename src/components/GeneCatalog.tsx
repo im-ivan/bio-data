@@ -10,8 +10,6 @@ interface FilterFields {
     function: boolean;
 }
 
-const MAX_ITEMS = 10
-const MAX_LEFT = (MAX_ITEMS - 1) / 2
 
 export const GeneCatalog = () => {
     const genesList: Gene[] = geneData
@@ -21,6 +19,9 @@ export const GeneCatalog = () => {
         function: true
     })
     const [currentPage, setCurrentPage] = useState<number>(1)
+    const MAX_ITEMS = 10
+    const LAST_INDEX = currentPage * MAX_ITEMS
+    const FIRST_INDEX = LAST_INDEX - MAX_ITEMS
 
     const handleFilterChange = (field: keyof FilterFields) => {
         setFilters(prevFilters => ({
@@ -104,7 +105,7 @@ export const GeneCatalog = () => {
                 <p className="col-span-full text-center text-slate-500">A busca retornou {filteredGenes.length} resultados.</p>
             }
             {
-                filteredGenes.map(gene => {
+                filteredGenes.slice(FIRST_INDEX, LAST_INDEX).map(gene => {
                     return (
                         <GeneCard key={gene.id} id={gene.id} name={gene.name} func={gene.function} />
                     )
